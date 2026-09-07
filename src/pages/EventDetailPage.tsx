@@ -39,13 +39,13 @@ export const EventDetailPage: React.FC = () => {
           <span className="neo-badge bg-[#ffe600] text-black border-black">
             {event.categoryTag}
           </span>
-          <span className="text-xs font-mono text-[#00f0ff] bg-[#182030] px-3 py-1 border border-black rounded shadow-[2px_2px_0px_0px_#000]">
+          {/* <span className="text-xs font-mono text-[#00f0ff] bg-[#182030] px-3 py-1 border border-black rounded shadow-[2px_2px_0px_0px_#000]">
             Prizepool: {event.prizepool}
-          </span>
+          </span> */}
         </div>
 
         <div className="space-y-3 max-w-3xl mx-auto">
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter uppercase leading-none">
             {event.title}
           </h1>
           <p className="text-sm sm:text-base text-gray-300 leading-relaxed font-sans">

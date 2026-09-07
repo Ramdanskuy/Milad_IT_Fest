@@ -41,11 +41,11 @@ export const eventsData: EventData[] = [
     shortDescription: "Turnamen E-Sports Mobile Legends Bang Bang tingkat regional dengan total hadiah jutaan rupiah.",
     fullDescription: "Tunjukkan keahlian strategi dan kerjasama tim kamu dalam ajang Mobile Legends Tournament Milad IT Fest 2026. Kompetisi ini terbuka untuk seluruh player Mobile Legends di Riau dan sekitarnya.",
     highlights: [
-      "Total Prizepool Rp 2.000.000",
+      "Total Prizepool Jutaan Rupiah",
       "E-Certificate untuk seluruh peserta",
       "Live Streaming Playoff & Final"
     ],
-    prizepool: "Rp 2.000.000",
+    prizepool: "Jutaan Rupiah",
     registrationFee: "Rp 100.000 / Tim",
     registrationLink: "https://forms.google.com/example-mlbb",
     contactPersons: [
@@ -101,15 +101,15 @@ export const eventsData: EventData[] = [
     slug: "badminton",
     title: "Badminton Championship",
     shortTitle: "Badminton",
-    categoryTag: "Civitas UIR & Pelajar",
+    categoryTag: "Mahasiswa & Pelajar",
     shortDescription: "Kejuaraan bulutangkis ganda putra & tunggal putra antar mahasiswa dan pelajar se-Riau.",
     fullDescription: "Ajang jalin silaturahmi dan unjuk bakat olahraga bulutangkis dalam rangka memeriahkan Milad Teknik Informatika UIR ke-19.",
     highlights: [
-      "Total Prizepool Rp 2.000.000 + Medali",
+      "Total Prizepool Jutaan Rupiah + Medali",
       "Fasilitas lapangan indoor standar turnamen",
       "Sertifikat Cetak untuk Para Juara"
     ],
-    prizepool: "Rp 2.000.000",
+    prizepool: "Jutaan Rupiah",
     registrationFee: "Rp 130.000 / Pasang (Ganda)",
     registrationLink: "https://forms.google.com/example-badminton",
     contactPersons: [
@@ -153,17 +153,17 @@ export const eventsData: EventData[] = [
   {
     id: "uiux",
     slug: "ui-ux-design",
-    title: "UI/UX Design Competition",
+    title: "UI/UX Design",
     shortTitle: "UI/UX Design",
-    categoryTag: "Mahasiswa & Pelajar",
+    categoryTag: "Mahasiswa & Pelajar Nasional",
     shortDescription: "Kompetisi merancang antarmuka dan pengalaman pengguna aplikasi berorientasi solusi masalah sosial.",
     fullDescription: "Kompetisi UI/UX Design menantang ide kreatif peserta dalam memecahkan masalah nyata melalui desain produk digital yang intuitif, estetis, dan solutif.",
     highlights: [
-      "Total Prizepool Rp 2.000.000 + E-Certificate",
+      "Total Prizepool Jutaan Rupiah + E-Certificate",
       "Review langsung dari Lead UI/UX Designer Industri",
       "Satu Tim Berisi 1 - 3 Orang"
     ],
-    prizepool: "Rp 2.000.000",
+    prizepool: "Jutaan Rupiah",
     registrationFee: "Rp 50.000 / Tim",
     registrationLink: "https://forms.google.com/example-uiux",
     guidebookLink: "https://drive.google.com/example-uiux-guidebook.pdf",
@@ -232,17 +232,17 @@ export const eventsData: EventData[] = [
   {
     id: "hackathon",
     slug: "hackathon",
-    title: "National Hackathon 2026",
+    title: "Hackathon Web Innovation",
     shortTitle: "Hackathon",
-    categoryTag: "Mahasiswa Nasional",
+    categoryTag: "Pelajar & Mahasiswa",
     shortDescription: "Ajang kompetisi pengkodean 24 jam untuk membangun prototype aplikasi inovatif bertema Green Tech & AI.",
     fullDescription: "Hackathon Milad IT Fest 2026 mengundang mahasiswa terbaik Indonesia untuk ngoding marathon selama 24 jam demi menciptakan aplikasi inovatif berbasis teknologi AI & Sustainable Development Goals (SDGs).",
     highlights: [
-      "Total Prizepool Rp 2.500.000 + Trophy",
+      "Total Prizepool Jutaan Rupiah + Trophy",
       "Kesempatan Inkubasi & Direct Pitching ke Investor",
       "Free Konsumsi & Mentoring Selama Hackathon"
     ],
-    prizepool: "Rp 2.500.000",
+    prizepool: "Jutaan Rupiah",
     registrationFee: "Rp 180.000 / Tim",
     registrationLink: "https://forms.google.com/example-hackathon",
     guidebookLink: "https://drive.google.com/example-hackathon-guidebook.pdf",
@@ -333,17 +333,17 @@ export const eventsData: EventData[] = [
   {
     id: "seminar",
     slug: "seminar-nasional",
-    title: "Seminar Nasional Teknologi Information 2026",
+    title: "Seminar Nasional",
     shortTitle: "Seminar Nasional",
     categoryTag: "Umum & Mahasiswa",
     shortDescription: "Seminar bertema 'Shaping the Future with Generative AI & Cyber Security Excellence'.",
     fullDescription: "Seminar Nasional Milad IT Fest 2026 menghadirkan pakar industri kecerdasan buatan (AI) dan praktisi cyber security terkemuka untuk mengupas tuntas tren teknologi masa depan dan strategi pertahanan siber.",
     highlights: [
-      "E-Certificate Nasional terakreditasi",
-      "Goodie Bag, Snack Box, & Certificate Cetak",
-      "Doorprizes Laptop, Tablet, & Smartwatch"
+      "E-Certificate Nasional",
+      "Snack Box",
+      "Doorprizes Menarik"
     ],
-    prizepool: "Doorprizes bernilai Rp 10.000.000",
+    prizepool: "",
     registrationFee: "Rp 35.000 (Mahasiswa) / Rp 50.000 (Umum)",
     registrationLink: "https://forms.google.com/example-seminar",
     contactPersons: [

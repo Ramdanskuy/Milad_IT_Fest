@@ -37,7 +37,7 @@ export const SponsorPage: React.FC = () => {
         <span className="neo-badge bg-[#ffe600] text-black border-black">
           Official Partners
         </span>
-        <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter uppercase leading-none">
           Sponsor & Media Partner
         </h1>
         <p className="text-sm font-mono text-gray-300 max-w-2xl mx-auto">

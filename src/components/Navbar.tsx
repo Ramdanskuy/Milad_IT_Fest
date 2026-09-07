@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X, Calendar, Flame, Sparkles } from 'lucide-react';
 import { eventsData } from '../data/eventsData';
@@ -7,6 +7,16 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleDropdownEnter = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    closeTimeout.current = setTimeout(() => setDropdownOpen(false), 200);
+  };
   const location = useLocation();
 
   useEffect(() => {
@@ -34,11 +44,10 @@ export const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-3 transition-all duration-300">
       <div
-        className={`max-w-7xl mx-auto rounded-xl transition-all duration-300 border-2 border-black ${
-          isScrolled
-            ? 'bg-[#121723]/95 backdrop-blur-md shadow-[4px_4px_0px_0px_#ffe600]'
-            : 'bg-[#121723] shadow-[4px_4px_0px_0px_#000000]'
-        } px-4 sm:px-6 py-3 flex items-center justify-between`}
+        className={`max-w-7xl mx-auto rounded-xl transition-all duration-300 border-2 border-black ${isScrolled
+          ? 'bg-[#121723]/95 backdrop-blur-md shadow-[4px_4px_0px_0px_#ffe600]'
+          : 'bg-[#121723] shadow-[4px_4px_0px_0px_#000000]'
+          } px-4 sm:px-6 py-3 flex items-center justify-between`}
       >
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group">
@@ -57,22 +66,20 @@ export const Navbar: React.FC = () => {
         <nav className="hidden md:flex items-center gap-6 text-sm font-bold">
           <Link
             to="/"
-            className={`px-3 py-1.5 rounded transition-all ${
-              isActive('/')
-                ? 'bg-[#ffe600] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
-                : 'text-gray-300 hover:text-white hover:bg-white/5'
-            }`}
+            className={`px-3 py-1.5 rounded transition-all ${isActive('/')
+              ? 'bg-[#ffe600] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
+              : 'text-gray-300 hover:text-white hover:bg-white/5'
+              }`}
           >
             Beranda
           </Link>
 
           <Link
             to="/about"
-            className={`px-3 py-1.5 rounded transition-all ${
-              isActive('/about')
-                ? 'bg-[#ffe600] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
-                : 'text-gray-300 hover:text-white hover:bg-white/5'
-            }`}
+            className={`px-3 py-1.5 rounded transition-all ${isActive('/about')
+              ? 'bg-[#ffe600] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
+              : 'text-gray-300 hover:text-white hover:bg-white/5'
+              }`}
           >
             About Us
           </Link>
@@ -80,55 +87,50 @@ export const Navbar: React.FC = () => {
           {/* Acara Dropdown */}
           <div
             className="relative"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
+            onMouseEnter={handleDropdownEnter}
+            onMouseLeave={handleDropdownLeave}
           >
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded transition-all ${
-                isAcaraActive
-                  ? 'bg-[#00f0ff] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
-                  : 'text-gray-300 hover:text-white hover:bg-white/5'
-              }`}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded transition-all ${isAcaraActive
+                ? 'bg-[#00f0ff] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
+                : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
             >
               <Flame className="w-4 h-4 text-[#ff007f]" />
               <span>Acara</span>
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {/* Dropdown Menu Box */}
-            {dropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 bg-[#181f2e] border-2 border-black shadow-[6px_6px_0px_0px_#000] rounded-lg p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                <div className="text-[11px] font-mono text-[#00f0ff] px-3 py-1 uppercase tracking-wider font-bold">
-                  Daftar Event & Kompetisi
-                </div>
-                <div className="divide-y divide-gray-800">
-                  {eventsData.map((ev) => (
-                    <Link
-                      key={ev.id}
-                      to={`/acara/${ev.slug}`}
-                      className="block px-3 py-2 text-sm text-gray-200 hover:bg-[#ffe600] hover:text-black font-medium transition-colors rounded group"
-                    >
-                      <div className="flex items-center justify-between">
-                        <span>{ev.title}</span>
-                        <span className="text-[10px] px-1.5 py-0.5 border border-black bg-black text-[#00f0ff] font-mono rounded group-hover:bg-black group-hover:text-[#ffe600]">
-                          {ev.shortTitle}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+            {/* Dropdown Menu Box — always rendered, animated via CSS */}
+            <div
+              className={`absolute top-full left-0 mt-2 w-64 bg-[#181f2e] border-2 border-black shadow-[6px_6px_0px_0px_#000] rounded-lg p-2 z-50
+                transition-all duration-200 ease-out origin-top
+                ${dropdownOpen
+                  ? 'opacity-100 scale-y-100 translate-y-0 pointer-events-auto'
+                  : 'opacity-0 scale-y-95 -translate-y-2 pointer-events-none'
+                }`}
+            >
+              <div className="divide-y divide-gray-800">
+                {eventsData.map((ev) => (
+                  <Link
+                    key={ev.id}
+                    to={`/acara/${ev.slug}`}
+                    className="block px-3 py-2.5 text-sm text-gray-200 hover:bg-[#ffe600] hover:text-black font-medium transition-colors rounded group"
+                  >
+                    <span>{ev.title}</span>
+                  </Link>
+                ))}
               </div>
-            )}
+            </div>
           </div>
 
           <Link
             to="/sponsor"
-            className={`px-3 py-1.5 rounded transition-all ${
-              isActive('/sponsor')
-                ? 'bg-[#ffe600] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
-                : 'text-gray-300 hover:text-white hover:bg-white/5'
-            }`}
+            className={`px-3 py-1.5 rounded transition-all ${isActive('/sponsor')
+              ? 'bg-[#ffe600] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]'
+              : 'text-gray-300 hover:text-white hover:bg-white/5'
+              }`}
           >
             Sponsor
           </Link>
@@ -160,17 +162,15 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden mt-2 max-w-7xl mx-auto bg-[#121723] border-2 border-black shadow-[6px_6px_0px_0px_#ffe600] rounded-xl p-4 space-y-3 z-50">
           <Link
             to="/"
-            className={`block px-4 py-2.5 rounded font-bold text-sm border-2 border-black ${
-              isActive('/') ? 'bg-[#ffe600] text-black' : 'bg-[#181f2e] text-white'
-            }`}
+            className={`block px-4 py-2.5 rounded font-bold text-sm border-2 border-black ${isActive('/') ? 'bg-[#ffe600] text-black' : 'bg-[#181f2e] text-white'
+              }`}
           >
             Beranda
           </Link>
           <Link
             to="/about"
-            className={`block px-4 py-2.5 rounded font-bold text-sm border-2 border-black ${
-              isActive('/about') ? 'bg-[#ffe600] text-black' : 'bg-[#181f2e] text-white'
-            }`}
+            className={`block px-4 py-2.5 rounded font-bold text-sm border-2 border-black ${isActive('/about') ? 'bg-[#ffe600] text-black' : 'bg-[#181f2e] text-white'
+              }`}
           >
             About Us
           </Link>
@@ -196,9 +196,8 @@ export const Navbar: React.FC = () => {
 
           <Link
             to="/sponsor"
-            className={`block px-4 py-2.5 rounded font-bold text-sm border-2 border-black ${
-              isActive('/sponsor') ? 'bg-[#ffe600] text-black' : 'bg-[#181f2e] text-white'
-            }`}
+            className={`block px-4 py-2.5 rounded font-bold text-sm border-2 border-black ${isActive('/sponsor') ? 'bg-[#ffe600] text-black' : 'bg-[#181f2e] text-white'
+              }`}
           >
             Sponsor
           </Link>

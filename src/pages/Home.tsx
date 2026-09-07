@@ -58,7 +58,7 @@ export const Home: React.FC = () => {
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-[#00f0ff]/10 blur-[100px] rounded-full pointer-events-none" />
 
         {/* Clean Hero Title (FR-01: Judul acara bersih tanpa card di atasnya) */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-none mb-6">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter uppercase leading-none mb-6">
           MILAD IT FEST <span className="text-[#ffe600] drop-shadow-[4px_4px_0px_#000]">2026</span>
         </h1>
 

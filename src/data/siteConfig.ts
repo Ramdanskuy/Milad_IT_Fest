@@ -25,12 +25,12 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   eventName: "MILAD IT FEST 2026",
-  subTitle: "Technofest UIR Vol. 2 & Milad Teknik Informatika ke-19",
+  subTitle: "Technofest UIR Vol. 2 & Milad Teknik Informatika UIR ke-19",
   organizer: "HIMATIF UIR",
   edition: "Milad Teknik Informatika UIR ke-19",
   theme: "Innovation & Technology: Creating Solutions, Shaping the Future",
   eventDate: "2026-10-12T08:00:00+07:00",
-  eventDateFormatted: "12 - 16 Oktober 2026",
+  eventDateFormatted: "1 - 2 Desember 2026",
   location: "Indoor Gor Volly Universitas Islam Riau",
   heroSlogans: [
     "Innovation & Technology: Creating Solutions, Shaping the Future.",

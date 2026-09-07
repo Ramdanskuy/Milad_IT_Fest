@@ -1,20 +1,20 @@
 import React from 'react';
 import { siteConfig } from '../data/siteConfig';
-import { Award, Flame, Users, Calendar, MapPin, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Award, Users, Calendar, MapPin, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-28 pb-16 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Header Banner */}
-      <div className="bg-[#121723] border-2 border-black shadow-[8px_8px_0px_0px_#ffe600] rounded-2xl p-8 sm:p-12 text-center space-y-4">
+      {/* Header Hero */}
+      <div className="text-center space-y-4 py-4">
         <span className="neo-badge bg-[#00f0ff] text-black border-black">
           Official Event Page
         </span>
-        <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          Tentang Milad IT Fest 2026
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white tracking-tighter uppercase leading-none">
+          Tentang Kami
         </h1>
         <p className="text-sm sm:text-base font-mono text-[#ffe600] max-w-3xl mx-auto">
-          {siteConfig.subTitle} — {siteConfig.edition}
+          {siteConfig.subTitle}
         </p>
       </div>
 
