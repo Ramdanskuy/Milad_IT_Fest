@@ -49,7 +49,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDateIso })
     <div className="flex flex-col items-center gap-3 my-6">
       <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#00f0ff] uppercase tracking-widest bg-[#181f2e] px-3 py-1 border-2 border-black shadow-[2px_2px_0px_0px_#000]">
         <Timer className="w-4 h-4 text-[#ffe600] animate-spin" style={{ animationDuration: '4s' }} />
-        Hitung Mundur Main Event (12 Okt 2026)
+        Hitung Mundur Main Event (1 Desember 2026)
       </div>
 
       <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-lg w-full">

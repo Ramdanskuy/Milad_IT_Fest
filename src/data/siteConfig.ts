@@ -29,7 +29,7 @@ export const siteConfig: SiteConfig = {
   organizer: "HIMATIF UIR",
   edition: "Milad Teknik Informatika UIR ke-19",
   theme: "Innovation & Technology: Creating Solutions, Shaping the Future",
-  eventDate: "2026-10-12T08:00:00+07:00",
+  eventDate: "2026-12-01T08:00:00+07:00",
   eventDateFormatted: "1 - 2 Desember 2026",
   location: "Indoor Gor Volly Universitas Islam Riau",
   heroSlogans: [
