@@ -31,7 +31,7 @@ export const siteConfig: SiteConfig = {
   theme: "Innovation & Technology: Creating Solutions, Shaping the Future",
   eventDate: "2026-10-12T08:00:00+07:00",
   eventDateFormatted: "12 - 16 Oktober 2026",
-  location: "Gedung Serbaguna & Kampus Teknik Informatika UIR, Pekanbaru",
+  location: "Indoor Gor Volly Universitas Islam Riau",
   heroSlogans: [
     "Innovation & Technology: Creating Solutions, Shaping the Future.",
     "Rayakan 19 Tahun Perjalanan Teknik Informatika UIR Bersama Kami.",
@@ -54,9 +54,9 @@ export const siteConfig: SiteConfig = {
     ]
   },
   contact: {
-    email: "milad.itfest2026@uir.ac.id",
-    instagram: "@himatif_uir",
-    whatsapp: "+62 822-8899-7711 (Humas Panitia)",
+    email: "miladitfestuir@gmail.com",
+    instagram: "@himatifuir_",
+    whatsapp: "+62 813-7459-1558 (Panitia)",
     address: "Jl. Kaharuddin Nasution No.113, Simpang Tiga, Marpoyan Damai, Pekanbaru, Riau 28284"
   }
 };

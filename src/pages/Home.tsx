@@ -14,7 +14,6 @@ import {
   Calendar,
   Sparkles,
   ArrowRight,
-  Flame,
   CheckCircle2,
   Rocket,
   ShieldCheck,
@@ -51,18 +50,12 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-12 space-y-20">
+    <div className="min-h-screen pt-20 pb-12 space-y-20">
       {/* SECTION 1: HERO */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 text-center flex flex-col items-center justify-center">
+      <section className="relative min-h-[calc(100vh-5rem)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center flex flex-col items-center justify-center">
         {/* Background ambient glow shapes */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#ffe600]/10 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-[#00f0ff]/10 blur-[100px] rounded-full pointer-events-none" />
-
-        {/* Top Edition Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#182030] border-2 border-black shadow-[3px_3px_0px_0px_#ffe600] px-4 py-1.5 rounded-full text-xs font-mono text-[#00f0ff] uppercase tracking-wider font-bold mb-6">
-          <Flame className="w-4 h-4 text-[#ff007f] animate-bounce" />
-          {siteConfig.edition} • {siteConfig.subTitle}
-        </div>
 
         {/* Clean Hero Title (FR-01: Judul acara bersih tanpa card di atasnya) */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-none mb-6">
