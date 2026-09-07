@@ -24,28 +24,46 @@ export const Home: React.FC = () => {
   // Overall roadmap timeline items for Home Page (Section 3)
   const homeRoadmapItems = [
     {
-      dateFormatted: "01 September 2026",
-      endDateIso: "2026-09-01T23:59:59+07:00",
-      title: "Pembukaan Pendaftaran Resmi & Launching Web",
-      description: "Pendaftaran seluruh cabang kompetisi & seminar nasional dibuka secara serentak."
+      dateFormatted: "1 Oktober 2026",
+      endDateIso: "2026-10-01T23:59:59+07:00",
+      title: "Pembukaan Pendaftaran Seluruh Cabang Lomba",
+      description: "Pendaftaran seluruh cabang lomba dibuka secara serentak."
     },
     {
-      dateFormatted: "05 Oktober 2026",
-      endDateIso: "2026-10-05T23:59:59+07:00",
-      title: "Penutupan Registrasi Gelombang Lomba",
-      description: "Batas akhir verifikasi berkas peserta dan penyelesaian administrasi tim."
+      dateFormatted: "14 - 15 November 2026",
+      endDateIso: "2026-11-15T23:59:59+07:00",
+      title: "Pelaksanaan Lomba Badminton",
+      description: "Bertempat di Gor Badminton, Simpang Tiga"
     },
     {
-      dateFormatted: "10 – 11 Oktober 2026",
-      endDateIso: "2026-10-11T23:59:59+07:00",
-      title: "Technical Meeting & Bracket Drawing",
-      description: "Pertemuan teknis panitia dan seluruh peserta secara daring."
+      dateFormatted: "21 - 22 November 2026",
+      endDateIso: "2026-11-22T23:59:59+07:00",
+      title: "Pelaksanaan Lomba Mobile Legends",
+      description: "Bertempat di Selasar Coffee"
     },
     {
-      dateFormatted: "12 - 16 Oktober 2026",
-      endDateIso: "2026-10-16T23:59:59+07:00",
-      title: "Puncak Acara MILAD IT FEST 2026 & Technofest UIR",
-      description: "Rangkaian babak final perlombaan, Hackathon 24 jam, Tech Expo, dan Seminar Nasional."
+      dateFormatted: "21 November 2026",
+      endDateIso: "2026-11-21T23:59:59+07:00",
+      title: "Final LOmba UI/UX Design",
+      description: "Presentasi Finalis Lomba UI/UX Design."
+    },
+    {
+      dateFormatted: "28 - 29 November 2026",
+      endDateIso: "2026-11-29T23:59:59+07:00",
+      title: "Pelaksanaan Lomba Hackathon",
+      description: "On site di Aula Gedung A Fakultas Teknik UIR"
+    },
+    {
+      dateFormatted: "1 Desember 2026",
+      endDateIso: "2026-12-01T23:59:59+07:00",
+      title: "Pembukaan pameran hari pertama",
+      description: "Pameran dilaksanakan di Indoor Gor Volly UIR"
+    },
+    {
+      dateFormatted: "2 Desember 2026",
+      endDateIso: "2026-12-02T23:59:59+07:00",
+      title: "Seminar Nasional dan Pameran ",
+      description: "Seminar nasional bertema 'Transformasi Digital: AI untuk Kemanusiaan' dan pameran teknologi"
     }
   ];
 
