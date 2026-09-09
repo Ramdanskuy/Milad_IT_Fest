@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EventData } from '../data/eventsData';
-import { CheckCircle2, ArrowRight, ExternalLink } from 'lucide-react';
+import { RegistrationClosedModal } from './RegistrationClosedModal';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface EventRegistrationCardProps {
   event: EventData;
+  /** Index untuk efek stagger (0-based) */
+  index?: number;
 }
 
-export const EventRegistrationCard: React.FC<EventRegistrationCardProps> = ({ event }) => {
+export const EventRegistrationCard: React.FC<EventRegistrationCardProps> = ({ event, index = 0 }) => {
   // Ensure max 3 highlights as specified in PRD FR-01
   const displayHighlights = event.highlights.slice(0, 3);
+  const [showModal, setShowModal] = useState(false);
+
+  // Scroll-reveal animation
+  const { ref, isVisible } = useScrollReveal<HTMLDivElement>();
+
+  // Stagger delay: tiap card muncul 80ms setelah card sebelumnya
+  const staggerDelay = `${index * 80}ms`;
 
   return (
-    <div className="bg-[#121723] border-2 border-black shadow-[6px_6px_0px_0px_#000000] hover:shadow-[8px_8px_0px_0px_#ffe600] hover:-translate-y-1 transition-all duration-200 rounded-xl p-5 sm:p-6 flex flex-col justify-between group">
+    <div
+      ref={ref}
+      style={{ transitionDelay: staggerDelay }}
+      className={`bg-[#121723] border-2 border-black shadow-[6px_6px_0px_0px_#000000] hover:shadow-[8px_8px_0px_0px_#ffe600] hover:-translate-y-1 transition-all duration-500 rounded-xl p-5 sm:p-6 flex flex-col justify-between group
+        ${
+          isVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-10'
+        }
+      `}
+    >
       <div>
         {/* Top Tag & Category */}
         <div className="flex items-center justify-between gap-2 mb-4">
@@ -50,15 +71,12 @@ export const EventRegistrationCard: React.FC<EventRegistrationCardProps> = ({ ev
 
       {/* Buttons: "Daftar Sekarang" & "Lihat Detail Acara" */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-gray-800">
-        <a
-          href={event.registrationLink}
-          target="_blank"
-          rel="noreferrer"
+        <button
+          onClick={() => setShowModal(true)}
           className="neo-btn-primary py-2.5 px-3 text-xs flex items-center justify-center gap-1.5 rounded-lg text-center"
         >
           <span>Daftar Sekarang</span>
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+        </button>
 
         <Link
           to={`/acara/${event.slug}`}
@@ -68,6 +86,13 @@ export const EventRegistrationCard: React.FC<EventRegistrationCardProps> = ({ ev
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>
+
+      {/* Registration Closed Popup */}
+      <RegistrationClosedModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        eventTitle={event.title}
+      />
     </div>
   );
 };

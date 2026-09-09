@@ -1,17 +1,17 @@
 import React from 'react';
 import { ContactPerson } from '../data/eventsData';
-import { ShieldCheck, PhoneCall, ExternalLink, ScrollText } from 'lucide-react';
+import { ShieldCheck, PhoneCall, ScrollText } from 'lucide-react';
 
 interface TournamentRuleCardProps {
   rules?: string[];
   contactPersons: ContactPerson[];
-  registrationLink: string;
+  onRegisterClick: () => void;
 }
 
 export const TournamentRuleCard: React.FC<TournamentRuleCardProps> = ({
   rules,
   contactPersons,
-  registrationLink,
+  onRegisterClick,
 }) => {
   return (
     <div className="bg-[#121723] border-2 border-black shadow-[6px_6px_0px_0px_#000] rounded-xl p-6 flex flex-col justify-between space-y-6">
@@ -68,16 +68,13 @@ export const TournamentRuleCard: React.FC<TournamentRuleCardProps> = ({
           </div>
         </div>
 
-        <a
-          href={registrationLink}
-          target="_blank"
-          rel="noreferrer"
+        <button
+          onClick={onRegisterClick}
           className="neo-btn-primary w-full py-3 text-xs uppercase tracking-wider flex items-center justify-center gap-2 rounded-lg text-center font-extrabold"
         >
           <ShieldCheck className="w-4 h-4" />
           Daftar Sekarang
-          <ExternalLink className="w-4 h-4" />
-        </a>
+        </button>
       </div>
     </div>
   );

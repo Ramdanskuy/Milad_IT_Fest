@@ -212,8 +212,8 @@ export const Home: React.FC = () => {
 
         {/* 6 Event Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {eventsData.map((ev) => (
-            <EventRegistrationCard key={ev.id} event={ev} />
+          {eventsData.map((ev, idx) => (
+            <EventRegistrationCard key={ev.id} event={ev} index={idx} />
           ))}
         </div>
       </section>

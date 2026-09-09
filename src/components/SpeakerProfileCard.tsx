@@ -1,12 +1,12 @@
 import React from 'react';
 import { Speaker, speakersData } from '../data/speakersData';
-import { UserCheck, Linkedin, Instagram, Twitter, ExternalLink, CalendarDays } from 'lucide-react';
+import { UserCheck, Linkedin, Instagram, Twitter, CalendarDays, ShieldCheck } from 'lucide-react';
 
 interface SpeakerProfileCardProps {
-  registrationLink: string;
+  onRegisterClick: () => void;
 }
 
-export const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({ registrationLink }) => {
+export const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({ onRegisterClick }) => {
   return (
     <div className="bg-[#121723] border-2 border-black shadow-[6px_6px_0px_0px_#00f0ff] rounded-xl p-6 space-y-6">
       <div className="flex items-center justify-between border-b border-gray-800 pb-3">
@@ -62,15 +62,13 @@ export const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({ registra
           </div>
         </div>
 
-        <a
-          href={registrationLink}
-          target="_blank"
-          rel="noreferrer"
+        <button
+          onClick={onRegisterClick}
           className="neo-btn-primary px-5 py-2.5 text-xs uppercase tracking-wider flex items-center gap-2 rounded-lg shrink-0"
         >
+          <ShieldCheck className="w-3.5 h-3.5" />
           <span>Daftar Seminar</span>
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+        </button>
       </div>
     </div>
   );

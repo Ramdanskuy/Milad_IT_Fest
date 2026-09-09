@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { eventsData } from '../data/eventsData';
 import { TournamentRuleCard } from '../components/TournamentRuleCard';
@@ -6,11 +6,13 @@ import { PrizePoolCard } from '../components/PrizePoolCard';
 import { SpeakerProfileCard } from '../components/SpeakerProfileCard';
 import { TimelineItem } from '../components/TimelineItem';
 import { FAQAccordion } from '../components/FAQAccordion';
-import { ExternalLink, FileText, ArrowLeft, Calendar, Award, ShieldCheck } from 'lucide-react';
+import { RegistrationClosedModal } from '../components/RegistrationClosedModal';
+import { FileText, ArrowLeft, Calendar, ShieldCheck } from 'lucide-react';
 
 export const EventDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const event = eventsData.find((e) => e.slug === slug);
+  const [showRegModal, setShowRegModal] = useState(false);
 
   if (!event) {
     return <Navigate to="/" replace />;
@@ -69,16 +71,13 @@ export const EventDetailPage: React.FC = () => {
           )}
 
           {/* Registration Button */}
-          <a
-            href={event.registrationLink}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            onClick={() => setShowRegModal(true)}
             className="neo-btn-primary px-6 py-3 text-xs uppercase tracking-wider flex items-center gap-2 rounded-xl text-black font-extrabold"
           >
             <ShieldCheck className="w-4 h-4" />
             <span>Daftar Sekarang</span>
-            <ExternalLink className="w-4 h-4" />
-          </a>
+          </button>
 
           {/* Guidebook button for other event types if available */}
           {!isUiUxOrHackathon && event.guidebookLink && (
@@ -98,7 +97,7 @@ export const EventDetailPage: React.FC = () => {
       {/* Main Details Section */}
       {isSeminar ? (
         /* FR-04: Replaces Rule Card with Speaker Profile Card */
-        <SpeakerProfileCard registrationLink={event.registrationLink} />
+        <SpeakerProfileCard onRegisterClick={() => setShowRegModal(true)} />
       ) : (
         /* FR-02: Rule Card + Prize Pool Card */
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -106,7 +105,7 @@ export const EventDetailPage: React.FC = () => {
             <TournamentRuleCard
               rules={event.rules}
               contactPersons={event.contactPersons}
-              registrationLink={event.registrationLink}
+              onRegisterClick={() => setShowRegModal(true)}
             />
           </div>
           <div className="lg:col-span-5">
@@ -161,6 +160,13 @@ export const EventDetailPage: React.FC = () => {
           />
         </div>
       )}
+
+      {/* Registration Closed Popup */}
+      <RegistrationClosedModal
+        isOpen={showRegModal}
+        onClose={() => setShowRegModal(false)}
+        eventTitle={event.title}
+      />
     </div>
   );
 };
