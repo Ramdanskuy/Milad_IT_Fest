@@ -113,11 +113,11 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
+        <div className="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-mono text-gray-500">
           <p>© 2026 MILAD IT FEST — HIMATIF Teknik Informatika Universitas Islam Riau.</p>
-          <p className="flex items-center gap-1 text-gray-400">
+          {/* <p className="flex items-center gap-1 text-gray-400">
             Crafted with <Heart className="w-3.5 h-3.5 text-[#ff007f] fill-[#ff007f]" /> for Milad TI UIR #19
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

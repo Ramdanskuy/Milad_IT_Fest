@@ -70,14 +70,16 @@ export const SponsorMarqueeInteractive: React.FC = () => {
               const isHovered = hoveredItemKey === itemKey;
 
               return (
-                <div
+                <a
                   key={itemKey}
+                  href={sponsor.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   onMouseEnter={() => {
                     setHoveredItemKey(itemKey);
                     setActiveSponsor(sponsor);
                   }}
                   onMouseLeave={() => setHoveredItemKey(null)}
-                  onClick={() => setActiveSponsor(sponsor)}
                   className={`cursor-pointer flex flex-col items-center justify-center text-center p-2 transition-all duration-300 ${
                     isHovered
                       ? 'grayscale-0 opacity-100 scale-110 z-20'
@@ -108,7 +110,7 @@ export const SponsorMarqueeInteractive: React.FC = () => {
                   >
                     {sponsor.tierLabel}
                   </span>
-                </div>
+                </a>
               );
             })}
           </div>
@@ -134,14 +136,16 @@ export const SponsorMarqueeInteractive: React.FC = () => {
               const isHovered = hoveredItemKey === itemKey;
 
               return (
-                <div
+                <a
                   key={itemKey}
+                  href={media.websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   onMouseEnter={() => {
                     setHoveredItemKey(itemKey);
                     setActiveSponsor(media);
                   }}
                   onMouseLeave={() => setHoveredItemKey(null)}
-                  onClick={() => setActiveSponsor(media)}
                   className={`cursor-pointer flex flex-col items-center justify-center text-center p-2 transition-all duration-300 ${
                     isHovered
                       ? 'grayscale-0 opacity-100 scale-110 z-20'
@@ -172,7 +176,7 @@ export const SponsorMarqueeInteractive: React.FC = () => {
                   >
                     {media.tierLabel}
                   </span>
-                </div>
+                </a>
               );
             })}
           </div>

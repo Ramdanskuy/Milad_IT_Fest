@@ -83,13 +83,12 @@ export const SponsorPage: React.FC = () => {
 
               {/* 3. TIER LABEL */}
               <span
-                className={`neo-badge border-black ${
-                  sponsor.tier === 'platinum'
+                className={`neo-badge border-black ${sponsor.tier === 'platinum'
                     ? 'bg-[#ff007f] text-white'
                     : sponsor.tier === 'gold'
-                    ? 'bg-[#ffe600] text-black'
-                    : 'bg-[#00f0ff] text-black'
-                }`}
+                      ? 'bg-[#ffe600] text-black'
+                      : 'bg-[#00f0ff] text-black'
+                  }`}
               >
                 {sponsor.tierLabel}
               </span>
@@ -189,22 +188,22 @@ export const SponsorPage: React.FC = () => {
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           <a
-            href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9]/g, '')}`}
+            href={`https://wa.link/mea7wh`}
             target="_blank"
             rel="noreferrer"
             className="neo-btn-primary px-8 py-4 text-sm font-extrabold uppercase tracking-wider flex items-center gap-3 rounded-xl"
           >
             <Phone className="w-5 h-5 text-black" />
-            <span>Hubungi Panitia (WhatsApp)</span>
+            <span>Hubungi Kami (WhatsApp)</span>
           </a>
 
-          <a
+          {/* <a
             href={`mailto:${siteConfig.contact.email}`}
             className="neo-btn-cyan px-8 py-4 text-sm font-extrabold uppercase tracking-wider flex items-center gap-3 rounded-xl"
           >
             <Mail className="w-5 h-5 text-black" />
             <span>Kirim Proposal (Email)</span>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

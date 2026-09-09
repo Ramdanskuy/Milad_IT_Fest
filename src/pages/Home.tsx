@@ -107,7 +107,7 @@ export const Home: React.FC = () => {
             className="neo-btn-primary px-6 py-3.5 text-sm uppercase tracking-wider flex items-center gap-2 rounded-xl text-black font-extrabold"
           >
             <Rocket className="w-5 h-5" />
-            Jelajahi Pendaftaran Lomba
+            Explore Event
           </a>
           <Link
             to="/about"
